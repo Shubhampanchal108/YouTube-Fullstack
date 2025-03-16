@@ -1,40 +1,37 @@
-# YouTube Full-Stack Clone (MERN)
+# 🎬 YouTube Full-Stack Clone (MERN)
 
 This is a full-featured YouTube clone built using the MERN stack (MongoDB, Express.js, React.js, Node.js). It replicates almost all key functionalities of YouTube, including video uploads, streaming, comments, likes, subscriptions, and more.
 
-## Features
+## 🚀 Features
 
-✅ User Authentication (JWT-based)
-✅ Video Uploading & Processing
-✅ Video Streaming (HLS / MP4)
-✅ Like, Dislike, and Comment System
-✅ Subscriptions & Notifications
-✅ Search & Filtering
-✅ Watch History & Recommendations
-✅ User Profile & Customization
-✅ Dark/Light Mode Toggle
-✅ Admin Panel for Content Moderation
+✅ User Authentication (🔐 JWT-based)
+✅ Video Uploading & Processing 🎥
+✅ Video Streaming (📺 HLS / MP4)
+✅ Like 👍, Dislike 👎, and Comment 💬 System
+✅ Subscriptions & Notifications 🔔
+✅ Search & Filtering 🔍
+✅ Watch History & Recommendations 🕒
+✅ User Profile & Customization 🧑‍💻
+✅ Dark/Light Mode Toggle 🌗
+✅ Admin Panel for Content Moderation ⚙️
 
-## Tech Stack
+## 🛠 Tech Stack
 
-### Frontend:
+### 🌟 Frontend:
+- ⚛️ React.js (with Hooks & Context API)
+- 🎨 Tailwind CSS (for styling)
+- 🌍 React Router (for navigation)
+- 🔗 Axios (for API requests)
 
-- React.js (with Hooks & Context API)
-- Redux Toolkit (for state management)
-- Tailwind CSS (for styling)
-- React Router (for navigation)
-- Axios (for API requests)
+### 🌟 Backend:
+- 🟢 Node.js & Express.js (REST API)
+- 🍃 MongoDB & Mongoose (Database)
+- ☁️ Firebase Storage / AWS S3 (Video storage)
+- 🖼 Cloudinary (Image processing)
+- 🔐 JWT Authentication
+- 📤 Multer (File uploads)
 
-### Backend:
-
-- Node.js & Express.js (REST API)
-- MongoDB & Mongoose (Database)
-- Firebase Storage / AWS S3 (Video storage)
-- Cloudinary (Image processing)
-- JWT Authentication
-- Multer (File uploads)
-
-## Installation & Setup
+## ⚙️ Installation & Setup
 
 ### 1️⃣ Clone the Repository
 
@@ -45,15 +42,13 @@ cd YouTube-Fullstack
 
 ### 2️⃣ Install Dependencies
 
-#### Backend:
-
+#### 🖥 Backend:
 ```sh
 cd server
 npm install
 ```
 
-#### Frontend:
-
+#### 🎨 Frontend:
 ```sh
 cd client
 npm install
@@ -68,49 +63,47 @@ PORT = ""
 MONGODB_URL = ""
 
 CLOUD_NAME = ""
-"CLOUDINARY_API_KEY = ""
+CLOUDINARY_API_KEY = ""
 CLOUDINARY_SECRET = ""
 
 CLOUDINARY_URL = ""
-"JWT_SECRET = ""
+JWT_SECRET = ""
 ```
 
 ### 4️⃣ Run the Application
 
-#### Backend:
-
+#### 🖥 Backend:
 ```sh
 cd server
-npm start
+npm run server
 ```
 
-#### Frontend:
-
+#### 🎨 Frontend:
 ```sh
 cd client
-npm start
+npm run dev
 ```
 
 ### 5️⃣ Access the Application
 
-- Open `http://localhost:3000` in your browser.
-- The backend runs on `http://localhost:5000`.
+- 🌐 Open `http://localhost:5173` in your browser.
+- 🖥 The backend runs on `http://localhost:5000`.
 
-## Screenshots
+## 📸 Screenshots
 
+_(Add your project screenshots here)_
 
+## 🔥 Future Enhancements
 
-## Future Enhancements
+- 🎥 Live Streaming Feature
+- 🤖 AI-Based Video Recommendations
+- 📊 More Analytics & Insights
 
-- Live Streaming Feature
-- AI-Based Video Recommendations
-- More Analytics & Insights
+## 🤝 Contributions
 
-## Contributions
+Feel free to contribute! Fork the repository, create a new branch, and submit a pull request. 🚀
 
-Feel free to contribute! Fork the repository, create a new branch, and submit a pull request.
-
-## License
+## 📜 License
 
 This project is licensed under the MIT License.
 
