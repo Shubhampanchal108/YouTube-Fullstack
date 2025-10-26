@@ -15,7 +15,7 @@ const ChannelPage = () => {
     
     useEffect(()=>{
         getVideos();
-    },[videos])
+    },[])
 
     useEffect(()=>{
         if(user.subscribedUsers.includes(channel._id)){

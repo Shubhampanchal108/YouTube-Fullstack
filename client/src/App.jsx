@@ -14,6 +14,7 @@ import History from "./Pages/History";
 import ChannelPage from "./Pages/ChannelPage";
 import SubscribedChannels from "./Pages/SubscribedChannelPage";
 import Trending from "./Pages/Trending";
+import PlaylistPage from "./Pages/Playlist";
 
 export const URL = `http://localhost:5000`;
 export const url = `http://localhost:5000`;
@@ -68,6 +69,7 @@ const App = () => {
         <Route path="/history" element={<History/>} />
         <Route path="/subscribedChannel" element={<SubscribedChannels/>} />
         <Route path="/trending" element={<Trending/>} />
+        <Route path="/playlist" element={<PlaylistPage/>} />
       </Routes>
     </>
   );

@@ -140,7 +140,7 @@ const Studio_Navbar = () => {
             />
             <Bell className="w-6 h-6 cursor-pointer text-gray-700 hover:text-blue-600 transition" />
             <div className="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center cursor-pointer hover:bg-gray-400 transition">
-              {!img ? (<span className="text-sm font-semibold text-gray-700">{user.name.slice(0,1)}</span>):(<img src={img}/>)}
+              {!img ? (<span className="text-sm font-semibold text-gray-700">{user.name.slice(0,1)}</span>):(<img className="rounded-full" src={img}/>)}
             </div>
           </div>
         </nav>

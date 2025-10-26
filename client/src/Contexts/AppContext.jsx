@@ -13,6 +13,7 @@ export const ContextProvider = ({ children }) => {
     const [subscribeBtn, setSubscribeBtn] = useState(false)
     const [subscription, setSubscription] = useState([]);
     const [history, setHistory] = useState([]);
+    const [commnets, setComments] = useState([]);
 
 
     // Get all Videos
@@ -161,6 +162,61 @@ export const ContextProvider = ({ children }) => {
         }
     }
 
+    //Like Button
+    const Like = async(userId, videoId)=>{
+        try {
+            const result = await axios.post(`${URL}/api/main/like`, {userId, videoId})
+            console.log(result.data)
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    //Remove Likes 
+    const removeLike = async(userId, videoId)=>{
+        try {
+            const result = await axios.post(`${URL}/api/main/removeLike`, {userId, videoId})
+            console.log(result.data)
+        } catch (error) {
+            console.log(error)
+        }
+
+    }
+
+    //Add Comment
+    const addComment = async(videoId, userId, comment)=>{
+        try{
+            const result = await axios.post(`${URL}/api/main/addComment`, {videoId, userId, comment})
+
+            if(result){
+                console.log(result.data)
+            }
+            else{
+                console.log("Something went wrong")
+            }
+        }
+        catch(error){
+            console.log(error)
+        }
+    }
+
+    //Get Comments
+    const getComments = async(videoId)=>{
+        try {
+            const result = await axios.get(`${URL}/api/main/getComment/${videoId}`)
+
+            if(result){
+                console.log(result.data)
+                setComments(result.data)
+            }
+            else{
+                console.log("Something went wrong")
+            }
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
     const store = {
         getVideos,
         videos,
@@ -180,7 +236,12 @@ export const ContextProvider = ({ children }) => {
         subscription,
         addHistory,
         GetHistory,
-        history
+        history,
+        Like,
+        removeLike,
+        addComment,
+        getComments,
+        commnets,
     };
 
     return <AppContext.Provider value={store}>{children}</AppContext.Provider>;

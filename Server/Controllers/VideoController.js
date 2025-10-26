@@ -99,6 +99,32 @@ const Like = async(req, res)=>{
     }
 }
 
+//Remove Like Controller
+const removeLike = async(req, res)=>{
+    try{
+        const {userId , videoId} = req.body;
+        const videoToRemove = await video.findById(videoId);
+
+        if(!videoToRemove){
+            return res.json("Sorry no video found");
+        }
+
+        if(videoToRemove.likes.includes(userId)){
+            videoToRemove.likes.pull(userId);
+            res.json("Like removed successfully")
+        }
+        else{
+            return res.json("Already removed")
+        }
+
+        // Save the updated video document
+        await videoToRemove.save();
+    }
+    catch(error){
+        console.log(error)
+    }
+}
+
 //Dislike Controller
 const disLike = async(req, res)=>{
     try {
@@ -124,4 +150,4 @@ const disLike = async(req, res)=>{
 }
 
 
-module.exports = {getVideo, uploadVideos, singleVideo, Like, disLike}
+module.exports = {getVideo, uploadVideos, singleVideo, Like, disLike, removeLike}

@@ -6,10 +6,11 @@ import {AppContext} from '../../Contexts/AppContext'
 
 const Content = () => {
 
-    const {getVideos, videos} = useContext(AppContext)
+    const {getVideos, videos,getComments, commnets,} = useContext(AppContext)
 
     useEffect(()=>{
         getVideos()
+        // getComments()
     }, [])
     return (
         <div className="ml-56 min-h-screen bg-gray-100 p-6 space-y-5 font-sans">
@@ -28,7 +29,9 @@ const Content = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {videos.filter(video=> video.userId === localStorage.getItem("id")).map((video) => (
+                        {videos.filter(video=> video.userId === localStorage.getItem("id")).map((video) =>{
+                            // const comment = getComments(video._id)
+                            return (
                             <tr key={video.id} className="border-b hover:bg-gray-50">
                                 <td className="flex items-center space-x-4 p-3">
                                     <img
@@ -53,13 +56,13 @@ const Content = () => {
                                 <td className="text-center p-2">
                                     <div className="flex items-center justify-center space-x-1">
                                         <FaComment className="text-green-500" />
-                                        <span>{video.comments}</span>
+                                        <span>{commnets.length}</span>
                                     </div>
                                 </td>
                                 <td className="text-center p-2">
                                     <div className="flex items-center justify-center space-x-1">
                                         <FaThumbsUp className="text-red-500" />
-                                        <span>{video.likes}</span>
+                                        <span>{video.likes.length}</span>
                                     </div>
                                 </td>
                                 <td className="text-center p-2 text-gray-600">{video.createdAt.slice(0, 10)}</td>
@@ -69,7 +72,7 @@ const Content = () => {
                                     </button>
                                 </td>
                             </tr>
-                        ))}
+                        )})}
                     </tbody>
                 </table>
             </div>

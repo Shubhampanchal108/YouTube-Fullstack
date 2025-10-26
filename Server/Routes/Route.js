@@ -11,7 +11,8 @@ const {
   uploadVideos,
   singleVideo,
   Like,
-  disLike
+  disLike,
+  removeLike,
 } = require("../Controllers/VideoController");
 const upload = require("../Middlewares/Multer");
 const {
@@ -21,6 +22,8 @@ const {
   unsubscribeUser,
 } = require("../Controllers/SubscriptionController");
 const {addHistory, getHistory} = require('../Controllers/HistoryController')
+const {addComment, getComments} = require('../Controllers/CommentController')
+const {showPlaylist} = require('../Controllers/PlaylistController')
 
 //USER ROUTES
 Router.get("/getUser", getUser);
@@ -47,6 +50,7 @@ Router.get("/singleVideo/:id", singleVideo);
 Router.delete("/deleteVideo");
 Router.post('/like', Like)
 Router.post('/dislike', disLike)
+Router.post('/removeLike', removeLike)
 
 //SUBSCRIBE ROUTES
 Router.post("/subscribe", subscribeUser);
@@ -57,5 +61,12 @@ Router.get("/user/:subscriberId/subscriptions", getSubscribedChannels);
 //HISTORY ROUTES
 Router.get("/history/:userId", getHistory)
 Router.post("/createHistory", addHistory)
+
+//COMMENT ROUTES
+Router.post("/addComment", addComment)
+Router.get("/getComment/:videoId", getComments)
+
+//PLAYLIST ROUTES
+Router.get('/playlist', showPlaylist)
 
 module.exports = Router;

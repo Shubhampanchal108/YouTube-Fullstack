@@ -44,7 +44,7 @@ const Navbar = () => {
           <Link to='/' className="flex items-center gap-4 py-2 cursor-pointer hover:bg-gray-100 p-2 rounded-md"><FaHome />Home</Link>
           <Link to='/trending'><li className="flex items-center gap-4 py-2 cursor-pointer hover:bg-gray-100 p-2 rounded-md"><FaFire /> Trending</li></Link>
           <Link to='/subscribedChannel'><li className="flex items-center gap-4 py-2 cursor-pointer hover:bg-gray-100 p-2 rounded-md"><FaPlayCircle /> Subscriptions</li></Link>
-          <li className="flex items-center gap-4 py-2 cursor-pointer hover:bg-gray-100 p-2 rounded-md"><FaBookmark /> Library</li>
+          <Link to='/playlist'><li className="flex items-center gap-4 py-2 cursor-pointer hover:bg-gray-100 p-2 rounded-md"><FaBookmark />Playlist</li></Link>
           <Link to='/history'><li className="flex items-center gap-4 py-2 cursor-pointer hover:bg-gray-100 p-2 rounded-md"><FaHistory /> History</li></Link>
         </ul>
       </div>
@@ -79,7 +79,7 @@ const Navbar = () => {
             <FaVideo className="text-xl cursor-pointer" onClick={()=> setUploadVideo(!uploadVideo)}/>
             <FaBell className="text-xl cursor-pointer" />
             <div className="relative cursor-pointer" onClick={() => setDropdownOpen(!dropdownOpen)}>
-            {(user.profilePic) ? <img src={user.profilePic} className="object-cover max-h-10 max-w-10 rounded-full"/>: <div className="bg-purple-700 border rounded-full w-[1.6rem]"><p className="text-white ml-[6px]">{(user.name)? user.name.slice(0,1): ""}</p></div>}
+            {(user?.profilePic) ? <img src={user?.profilePic} className="object-cover max-h-10 max-w-10 rounded-full"/>: <div className="bg-purple-700 border rounded-full w-[1.6rem]"><p className="text-white ml-[6px]">{(user.name)? user.name.slice(0,1): ""}</p></div>}
               
               {/* Dropdown Menu */}
               {dropdownOpen && (
